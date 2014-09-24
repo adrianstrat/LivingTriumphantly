@@ -1,0 +1,46 @@
+flexbox{
+	display:flex;
+	justify-content:space-between;
+	align-items:baseline;
+	padding: 1% 1% 1% 1%;
+}
+
+h3{
+	color:#260FBD;
+}
+
+.item{
+	border: 2px solid;
+	border-radius: 15px;
+	border-color: #260FBD;
+	color:#3940B2;
+}
+
+	.item a{
+		color:#3940B2;
+	}
+
+.navtitle{
+	min-width:100%;
+	padding: 1% 1% 1% 1%;
+}
+
+	.navtitle a{
+		font-size:20px;
+		color:#FFED02;
+	}
+
+.navbar{
+	border:2px solid;
+	border-radius:5px;
+	border-color:#260FBD;
+	background-color:#260FBD;
+}
+
+.navLinks{
+	width:70%;
+}
+
+.navLink{
+	color:white;
+}

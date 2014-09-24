@@ -1,0 +1,23 @@
+<template name="layout">
+   <div class="container">
+   <header class="navbar">
+     <div class="navtitle">
+        <a href="{{pathFor 'itemBrowse'}}">Listless</a>
+     </div> <br>
+     <flexbox class="navlinks">
+     	<a class="navLink" href="{{pathFor 'itemSearch'}}">Search</a>
+     	<a class="navLink" href="{{pathFor 'itemBrowse'}}">Browse</a>
+     	{{#if currentUser}}
+     	<a class="navLink" href="{{pathFor 'itemSubmit'}}">Add</a>
+     	<a class="navLink" href="{{pathFor 'itemPersonal'}}">My List</a>
+     	{{/if}}
+        <ul class="nav pull-right">
+     		<li>{{> loginButtons align="right"}}</li>
+     	</ul>
+     </flexbox>
+   </header>
+   <div id="main" class="row-fluid">
+      {{> yield}}
+   </div>
+   </div>
+</template>

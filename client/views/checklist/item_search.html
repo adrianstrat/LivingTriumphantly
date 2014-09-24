@@ -1,0 +1,20 @@
+<template name="itemSearch">
+	<form class="main" action="/search">
+		<div class="control-group">
+			<label class="control-label" for="url">Search</label>
+			<div class="controls">
+				<input name="summary" type="text" value="" placeholder="Summary"/>
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" value="Submit" class="btn btn-primary"/>
+			</div>
+		</div>
+	</form>
+	{{#if items}}
+		{{> itemList items=items}}
+	{{else}}
+	{{/if}}
+</template>

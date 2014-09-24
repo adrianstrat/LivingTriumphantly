@@ -1,0 +1,14 @@
+<template name="itemList">
+	<div class="list-title">
+		<flexbox class="list-title-items">
+			<h3></h3>
+			<h3>Summary</h3>
+			<h3>Total Adds</h3>
+		</flexbox>
+	</div>
+	<div class="item-list">
+		{{#each items}}
+			{{> item}}
+		{{/each}}
+	</div>
+</template>

@@ -1,0 +1,11 @@
+<template name="itemPersonal">
+	<flexbox>
+	{{#unless userItemOpen}}
+		<a name='userItemOpen' class='userItemView'>Active</a>
+	{{/unless}}
+	{{#unless userItemClosed}}
+		<a name='userItemClosed' class='userItemView'>Finished</a>	
+	{{/unless}}
+	</flexbox>
+	{{> itemList items=items}}
+</template>
