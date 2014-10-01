@@ -1,0 +1,15 @@
+<template name="goalList">
+	<div class="list-title">
+		<flexbox class="list-title-goals">
+			<h3></h3>
+			<h3>Summary</h3>
+			<h3>Total Adds</h3>
+			<h3>Triumphs</h3>
+		</flexbox>
+	</div>
+	<div class="goal-list">
+		{{#each goals}}
+			{{> goal}}
+		{{/each}}
+	</div>
+</template>

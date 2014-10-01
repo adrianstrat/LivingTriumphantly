@@ -2,14 +2,14 @@
    <div class="container">
    <header class="navbar">
      <div class="navtitle">
-        <a href="{{pathFor 'itemBrowse'}}">Listless</a>
+        <a href="{{pathFor 'goalBrowse'}}">Living Triumphantly</a>
      </div> <br>
      <flexbox class="navlinks">
-     	<a class="navLink" href="{{pathFor 'itemSearch'}}">Search</a>
-     	<a class="navLink" href="{{pathFor 'itemBrowse'}}">Browse</a>
+     	<a class="navLink" href="{{pathFor 'goalSearch'}}">Search</a>
+     	<a class="navLink" href="{{pathFor 'goalBrowse'}}">Browse</a>
      	{{#if currentUser}}
-     	<a class="navLink" href="{{pathFor 'itemSubmit'}}">Add</a>
-     	<a class="navLink" href="{{pathFor 'itemPersonal'}}">My List</a>
+     	<a class="navLink" href="{{pathFor 'goalSubmit'}}">Add</a>
+     	<a class="navLink" href="{{pathFor 'goalPersonal'}}">My List</a>
      	{{/if}}
         <ul class="nav pull-right">
      		<li>{{> loginButtons align="right"}}</li>

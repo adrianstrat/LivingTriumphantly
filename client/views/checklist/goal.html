@@ -1,0 +1,12 @@
+<template name="goal">
+	<flexbox class="goal">
+		{{#if inList}}
+			<div></div>
+		{{else}}
+			<button class=btn name="addGoal" type="button" value={{_id}}>Add</button>
+		{{/if}}
+		<a href="{{pathFor 'goalPage'}}" class="detail-btn">{{summary}}</a>
+		<span>{{adds}}</span>
+		<span>{{triumphsCount}} triumphs</span>
+	</flexbox>
+</template>

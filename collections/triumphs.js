@@ -1,0 +1,1 @@
+Triumphs = new Meteor.Collection('triumphs');

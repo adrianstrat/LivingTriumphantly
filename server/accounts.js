@@ -1,5 +1,5 @@
 Accounts.onCreateUser(function (options, user) {
-	user.listUser = [];
+	user.userList = [];
 	user.userDone = [];
 	return user;
 });

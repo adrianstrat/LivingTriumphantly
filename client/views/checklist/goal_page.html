@@ -1,5 +1,5 @@
-<template name="itemPage">
-	<div class="itemPage">
+<template name="goalPage">
+	<div class="goalPage">
 		<h1>{{summary}}</h1>
 		<p>{{detail}}</p>
 		<p>{{adds}}</p>
@@ -7,4 +7,9 @@
 		<p>{{author}}</p>
 		<p>{{friendlyDate}}</p>
 	</div>
+	<ul class="triumphs">
+		{{#each triumphs}}
+			{{> triumph}}
+		{{/each}}
+	</ul>
 </template>

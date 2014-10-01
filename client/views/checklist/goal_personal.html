@@ -1,0 +1,11 @@
+<template name="goalPersonal">
+	<flexbox>
+	{{#unless userGoalOpen}}
+		<a name='userGoalOpen' class='userGoalView'>Active</a>
+	{{/unless}}
+	{{#unless userGoalClosed}}
+		<a name='userGoalClosed' class='userGoalView'>Finished</a>	
+	{{/unless}}
+	</flexbox>
+	{{> goalList goals=goals}}
+</template>
