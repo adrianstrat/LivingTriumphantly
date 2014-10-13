@@ -4,6 +4,7 @@ Template.goalSubmit.events({
 		
 		var goal = {
 			summary: $(e.target).find('[name=summary]').val(),
+			image: $(e.target).find('[name=image]').val(),
 			detail: $(e.target).find('[name=detail]').val()
 		};
 		

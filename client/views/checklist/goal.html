@@ -1,12 +1,16 @@
 <template name="goal">
 	<flexbox class="goal">
-		{{#if inList}}
-			<div></div>
+		{{#if inUserListClosed}}
+			<em class="width-80px">finished</em>
 		{{else}}
-			<button class=btn name="addGoal" type="button" value={{_id}}>Add</button>
+			{{#if inUserListOpen}}
+				<button class="btn buttonDarkBlue white width-80px" id="finishGoal" data-toggle="modal" data-target="#modalFinish" type="button"  value={{_id}}>Finish!</button>
+			{{else}}
+				<button class="btn width-80px" id="addGoal" type="button" value={{_id}}>Add</button>
+			{{/if}}
 		{{/if}}
-		<a href="{{pathFor 'goalPage'}}" class="detail-btn">{{summary}}</a>
-		<span>{{adds}}</span>
-		<span>{{triumphsCount}} triumphs</span>
+		<a href="{{pathFor 'goalPage'}}" class="detail-btn colorDarkBlue width-50">{{summary}}</a>
+		<b class="colorDarkBlue width-10">{{adds}}</b>
+		<span class="colorDarkBlue">{{triumphsCount}} triumphs</span>
 	</flexbox>
 </template>

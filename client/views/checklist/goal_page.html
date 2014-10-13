@@ -1,15 +1,20 @@
 <template name="goalPage">
-	<div class="goalPage">
-		<h1>{{summary}}</h1>
-		<p>{{detail}}</p>
-		<p>{{adds}}</p>
-		<p>{{completes}}</p>
-		<p>{{author}}</p>
-		<p>{{friendlyDate}}</p>
-	</div>
-	<ul class="triumphs">
+	<flexbox class="goalPage">
+		<div class="goalImage">
+				<img src={{image}}>
+				<h2 class="goalImageText"><span>{{summary}}</span></h2>
+		</div>
+		<div class="goalDetail">
+			<p class="goalDetailText">{{detail}}</p>
+			<p><b>Total Adds:</b> {{adds}}</p>
+			<p><b>Total Completes:</b> {{completes}}</p>
+			<p><b>Author:</b> {{author}}</p>
+			<p><b>Created:</b> {{friendlyDate}}</p>
+		</div>
+	</flexbox>
+	<div class="triumphs">
 		{{#each triumphs}}
 			{{> triumph}}
 		{{/each}}
-	</ul>
+	</div>
 </template>

@@ -1,0 +1,22 @@
+<template name="modalFinish">
+   <div class="modal fade" id="modalFinish" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Complete your Goal</h4>
+	      </div>
+	      <div class="modal-body">
+		    <form id="formFinish">
+				<b class="width-25">Triumph: </b><input type="text" name="finishTriumph" placeholder="Profess your Success"><br>
+				<b class="width-25">Proof: </b><input type="url" name="finishLink" placeholder="Video or Picture"><br>
+			</form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <input type="submit" value="Complete!" class="btn btn-success" id="submitTriumph" form="formFinish" />
+	      </div>
+	    </div>
+	  </div>
+   </div>
+</template>

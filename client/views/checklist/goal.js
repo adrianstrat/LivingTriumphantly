@@ -1,4 +1,10 @@
 Template.goal.helpers({
+	inUserListOpen: function(){
+		return Meteor.user().userList.indexOf(this._id) >= 0;
+	},
+	inUserListClosed: function() {
+		return Meteor.user().userDone.indexOf(this._id) >= 0;
+	},
 	inList: function() {
 		var goalId = this._id;
 		function inUserListOpen() {
@@ -15,7 +21,7 @@ Template.goal.helpers({
 });
 
 Template.goal.events({
-	'click .btn' : function(e) {
+	'click #addGoal' : function(e) {
 		var clickedButton = e.currentTarget;
 		var goalId = $(clickedButton).val();
 		Meteor.call('addGoal', Meteor.user()._id, goalId, function(error, id){
@@ -23,5 +29,10 @@ Template.goal.events({
 				return alert(error.reason);
 		});
 	    return;
-	  }
+	  },
+	'click #finishGoal' : function(e) {
+		var clickedButton = e.currentTarget;
+		var goalId = $(clickedButton).val();
+		Session.set("goal_id", goalId); 
+	}
 });
