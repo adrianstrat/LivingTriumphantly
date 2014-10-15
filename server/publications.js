@@ -1,3 +1,4 @@
+//publish only the specified userData indexes
 Meteor.publish('userData', function () {
     return Meteor.users.find({_id: this.userId}, {createdAt : 1, 
     											  userDone : 1, 

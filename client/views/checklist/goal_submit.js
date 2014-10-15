@@ -1,5 +1,11 @@
 Template.goalSubmit.events({
 	'submit form': function(e) {
+		/**
+		 * @desc evalutes the submitted goal, on success saves it and routes
+		 *  the user to the new goal page
+		 * @param e - the submitted item
+		 * @return string - error reason if any
+		 */
 		e.preventDefault();
 		
 		var goal = {

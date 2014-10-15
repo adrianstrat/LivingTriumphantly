@@ -1,11 +1,11 @@
 <template name="goalPage">
-	<flexbox class="goalPage">
-		<div class="goalImage">
+	<flexbox class="flexWrap noPadding">
+		<div class="goalImage min-width320px width-50 positionRelative">
 				<img src={{image}}>
 				<h2 class="goalImageText"><span>{{summary}}</span></h2>
 		</div>
-		<div class="goalDetail">
-			<p class="goalDetailText">{{detail}}</p>
+		<div class="goalDetail min-width320px thinBlueBorder">
+			<p class="bold">{{detail}}</p>
 			<p><b>Total Adds:</b> {{adds}}</p>
 			<p><b>Total Completes:</b> {{completes}}</p>
 			<p><b>Author:</b> {{author}}</p>

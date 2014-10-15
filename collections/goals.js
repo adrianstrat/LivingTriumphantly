@@ -2,6 +2,11 @@ Goals = new Meteor.Collection('goals');
 
 Meteor.methods({
 	submit: function(goalAttributes) {
+		/**
+		 * @desc validates and creates a new "goal" in db.goals
+		 * @param array goalAttributes - an array with indexes "summary", "image", and "detail"
+		 * @return string - the Id of the successfully created goal
+		 */
 		var user = Meteor.user(),
 			goalWithSameSummary = Goals.findOne({summary: goalAttributes.summary});
 	
@@ -39,6 +44,11 @@ Meteor.methods({
 		return goalId;
 	},
 	submitTriumph: function(triumphAttributes) {
+		/**
+		 * @desc validates and creates a new "triumph" in db.triumphs
+		 * @param array triumphAttributes - an array with indexes "goalId", "body", and "link"
+		 * @return string - the Id of the goal that this is a triumph for
+		 */
 		var user = Meteor.user(),
 			existingTriumph = Triumphs.findOne({userId : user._id, goalId : triumphAttributes.goalId});
 		// ensure the user is logged in
@@ -73,10 +83,22 @@ Meteor.methods({
 		return triumph.goalId;
 	},
 	addGoal: function(userId, goalId){
+		/**
+		 * @desc adds a goal to a user's personal list of goals
+		 * @param string userId - the id of the logged in user
+		 * @param string goalId - the id of the goal to add
+		 * @return none
+		 */
 		Meteor.users.update({_id:userId},{$push: { 'userList' : goalId }});
 		Goals.update({_id:goalId},{$inc: { 'adds' : 1 }});
 	},
 	finishGoal: function(userId, goalId){
+		/**
+		 * @desc moves a goal from a user's personal goal list to their completed list
+		 * @param string userId - the id of the logged in user
+		 * @param string goalId - the id of the goal to move
+		 * @return none
+		 */
 		Meteor.users.update({_id:userId},{$pull: { 'userList' : goalId }});
 		Meteor.users.update({_id:userId},{$push: { 'userDone' : goalId }});
 		Goals.update({_id:goalId},{$inc: { 'completes' : 1 }});

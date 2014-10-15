@@ -5,6 +5,7 @@ Template.goalPage.helpers({
 		return Date(milTime).toString();
 	},
 	triumphs: function() {
+		//returns triumphs related to the current goal
 		return Triumphs.find({goalId: this._id});
 	}
 });

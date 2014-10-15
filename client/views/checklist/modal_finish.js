@@ -1,4 +1,10 @@
 Template.modalFinish.events({
+	/**
+	 * @desc evalutes the submitted triumph, on success saves it and routes
+	 *  the user to the related goal page
+	 * @param e - the submitted item
+	 * @return string - error reason if any
+	 */
 	'submit form': function(e) {
 		e.preventDefault();
 		

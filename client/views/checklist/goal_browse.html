@@ -1,13 +1,13 @@
 <template name="goalBrowse">
 	<flexbox>
 	{{#unless goalNewest}}
-		<a name='goalNewest' class='goalSort'>by Newest</a>
+		<a id="sort" name='goalNewest'>by Newest</a>
 	{{/unless}}
 	{{#unless goalPopular}}
-		<a name='goalPopular' class='goalSort'>by Hottest</a>	
+		<a id="sort" name='goalPopular'>by Hottest</a>	
 	{{/unless}}
 	{{#unless goalHottest}}
-		<a name='goalHottest' class='goalSort'>by Trending</a>
+		<a id="sort" name='goalHottest'>by Trending</a>
 	{{/unless}}
 	</flexbox>
 	{{> goalList goals=goals}}

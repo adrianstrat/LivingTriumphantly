@@ -1,3 +1,8 @@
+/***************************
+****************************
+Global Styles
+****************************
+***************************/
 flexbox{
 	display:flex;
 	justify-content:space-between;
@@ -9,8 +14,33 @@ h3{
 	color:#260FBD;
 }
 
+/***************************
+****************************
+Common Simple Styles
+****************************
+***************************/
+.bold{
+	font-weight: bold;
+}
+
 .colorDarkBlue{
 	color:#260FBD;
+}
+
+.colorYellow{
+	color:#FFED02;
+}
+
+.colorWhite{
+	color:white;
+}
+
+.borderRadius-5px{
+	border-radius:5px;
+}
+
+.borderRadius-15px{
+	border-radius:15px;
 }
 
 .buttonDarkBlue{
@@ -21,8 +51,8 @@ h3{
 	background:#1c0b8e;
 }
 
-.white{
-	color:white;
+.font-20px{
+	font-size:20px;
 }
 
 .width-80px{
@@ -38,40 +68,66 @@ h3{
 .width-50{
 	width:50%;
 }
-
-.goal{
-	border: 2px solid;
-	border-radius: 15px;
-	border-color: #260FBD;
-	color:#3940B2;
+.width-70{
+	width:70%;
+}
+.min-width320px{
+	min-width: 320px;
 }
 
-	.goal a{
-		color:#3940B2;
-	}
+.positionRelative{
+	position:relative;
+}
 
-.goalPage{
+.noPadding{
+	padding:0;
+}
+
+.noMargin{
+	margin:0;
+}
+
+.flexWrap{
 	display: flex;
 	align-items: flex-start;
-	padding: 0;
 	flex-wrap: wrap;
 }
 
+.thinBlueBorder{
+	border-color: #260FBD;
+	color:#260FBD;
+	border: 2px solid;
+}
+
+.fillBlueBorder{
+	background-color: #260FBD;
+	border-color: #260FBD;
+	color:#260FBD;
+	border: 2px solid;
+}
+
+/***************************
+****************************
+Class Specific Styles
+****************************
+***************************/
+/* navbar is styled by bootstrap*/
+.navbar{
+	border:2px solid;
+	border-radius:5px;
+	border-color:#260FBD;
+	background-color:#260FBD;
+}
+
+.navtitle{
+	min-width:100%;
+	padding: 1% 1% 1% 1%;
+}
+
 .goalImage{
-  display: inline-block;
-  height: auto;
-  margin: 0;
-  position: relative;
-  width: 50%;
-  min-width: 320px;
-  padding: 0;
 }
 	.goalImage:hover .goalImageText{
 	  	opacity: 1;  
-	}
-
-	.goalImage img{
-		maxwidth: 100%;
 	}
 	
 	.goalImage h2{
@@ -97,29 +153,12 @@ h3{
 		}
 		
 .goalDetail {
-  display: inline-block;
-  height: auto;
-  margin: 0;
-  position: relative;
-  width: calc(50% - 4px);
-  min-width: 320px;
-  padding: 0;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #260FBD;
+	width: calc(50% - 4px);
 }
 
 	.goalDetail p{
 		padding: 0 1em 0 1em;
 	}
-
-.goalDetailText{
-	font-weight: bold;
-}
-
-.finishDialogue{
-	min-width: 100%;
-}
 
 .triumph {
 	color: #260FBD;
@@ -133,27 +172,3 @@ h3{
   	border-radius: 15px;
 }
 
-.navtitle{
-	min-width:100%;
-	padding: 1% 1% 1% 1%;
-}
-
-	.navtitle a{
-		font-size:20px;
-		color:#FFED02;
-	}
-
-.navbar{
-	border:2px solid;
-	border-radius:5px;
-	border-color:#260FBD;
-	background-color:#260FBD;
-}
-
-.navLinks{
-	width:70%;
-}
-
-.navLink{
-	color:white;
-}

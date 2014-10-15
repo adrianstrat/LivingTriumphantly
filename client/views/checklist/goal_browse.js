@@ -1,10 +1,12 @@
 Meteor.startup( function () {
+	//sets session values when first loading page
 	Session.set("sortOrder", "goalNewest");
 	Session.set("sortValue", {created : -1});
 });
 
 Template.goalBrowse.helpers({
 	goals: function() {
+		//retrieves the goals sorted by the session value "sortValue"
 		return Goals.find({}, {sort: Session.get("sortValue")});
 	},
 	goalNewest: function() {
@@ -19,7 +21,12 @@ Template.goalBrowse.helpers({
 });
 
 Template.goalBrowse.events({
-	'click .goalSort': function(e, t){
+	'click #sort': function(e){
+		/**
+		 * @desc sets the value of "sortOrder" based on the selected item
+		 * @params e - the clicked item with class "goalSort"
+		 * @return None
+		 */
 		var sortOrder = e.target.getAttribute("name");
 		if (sortOrder == "goalNewest") {
 			Session.set("sortOrder", "goalNewest");

@@ -1,3 +1,4 @@
+//create some data if there is none
 if (Goals.find().count() === 0) {
 	var now = new Date().getTime();
 	//create two users

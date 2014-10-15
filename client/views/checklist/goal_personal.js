@@ -1,9 +1,11 @@
 Meteor.startup( function () {
+	//sets the value of userGoalView on page load
 	Session.set("userGoalView", "userGoalOpen");
 });
 
 Template.goalPersonal.helpers({
 	goals: function() {
+		//based on value of userGoalView displays open or completed goals
 		if (Session.get("userGoalView") == "userGoalOpen") {
 			return Goals.find({_id: {$in: Meteor.user().userList}});
 		} else {
@@ -19,7 +21,12 @@ Template.goalPersonal.helpers({
 });
 
 Template.goalPersonal.events({
-	'click .userGoalView': function(e, t) {
+	'click #view': function(e) {
+		/**
+		 * @desc changes session value "userGoalView" based on clicked item
+		 * @params e - selected item
+		 * @return None
+		 */
 		var userGoalView = e.target.getAttribute("name");
 		Session.set("userGoalView", userGoalView);
 		console.log(userGoalView);
