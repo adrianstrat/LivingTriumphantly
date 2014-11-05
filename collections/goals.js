@@ -35,52 +35,15 @@ Meteor.methods({
 			author: user.username,
 			created: new Date().getTime(),
 			adds: 0,
-			completes: 0
+			completes: 0,
+			upvoters: [],
+			votes: 0
 		});
 		
 		var goalId = Goals.insert(goal);
 		Meteor.call('addGoal', user._id, goalId);
 		
 		return goalId;
-	},
-	submitTriumph: function(triumphAttributes) {
-		/**
-		 * @desc validates and creates a new "triumph" in db.triumphs
-		 * @param array triumphAttributes - an array with indexes "goalId", "body", and "link"
-		 * @return string - the Id of the goal that this is a triumph for
-		 */
-		var user = Meteor.user(),
-			existingTriumph = Triumphs.findOne({userId : user._id, goalId : triumphAttributes.goalId});
-		// ensure the user is logged in
-		if (!user)
-			throw new Meteor.Error(401, "You need to login to post your triumph");
-	
-		// ensure the item has a description
-		if (!triumphAttributes.body)
-			throw new Meteor.Error(422, 'Please add words to your triumph');
-		
-		// ensure an image link has been included
-		if (!triumphAttributes.link)
-			throw new Meteor.Error(422, 'Please provide proof');
-		
-		// check that there are no previous posts with the same link
-		if (existingTriumph) {
-			throw new Meteor.Error(302,
-					'You can only post one triumph per goal',
-					existingTriumph.goalId);
-		}
-	
-		// pick out the whitelisted keys
-		var triumph = _.extend(_.pick(triumphAttributes, 'body', 'link', 'goalId'), {
-			userId: user._id,
-			author: user.username,
-			submitted: new Date().getTime(),
-		});
-		
-		Triumphs.insert(triumph);
-		Meteor.call('finishGoal', user._id, triumph.goalId);
-		
-		return triumph.goalId;
 	},
 	addGoal: function(userId, goalId){
 		/**
@@ -102,5 +65,13 @@ Meteor.methods({
 		Meteor.users.update({_id:userId},{$pull: { 'userList' : goalId }});
 		Meteor.users.update({_id:userId},{$push: { 'userDone' : goalId }});
 		Goals.update({_id:goalId},{$inc: { 'completes' : 1 }});
+	},
+	upVote: function(userId, goalId) {
+		var goal = Goals.findOne({_id:goalId},{});
+		if (goal.upvoters.indexOf(userId)> -1){
+			throw new Meteor.Error(422, 'You have already upvoted this goal');
+		} else {
+			Goals.update({ _id : goalId }, {$push: { 'upvoters' : userId }, $inc : { 'votes' : 1 }});
+		}
 	}
 });

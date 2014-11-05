@@ -38,7 +38,7 @@ Template.goalBrowse.events({
 		};
 		if (sortOrder == "goalHottest") {
 			Session.set("sortOrder", "goalHottest");
-			Session.set("sortValue", {created : -1});
+			Session.set("sortValue", {votes : -1});
 		};
 		console.log(sortOrder);
 		return

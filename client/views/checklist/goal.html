@@ -1,5 +1,7 @@
 <template name="goal">
 	<flexbox class="thinBlueBorder borderRadius-15px">
+		{{#if currentUser}}
+		<input id={{upVoteId}} type="image" src={{upVoteLink}} alt="Submit">
 		{{#if inUserListClosed}}
 			<em class="width-80px">finished</em>
 		{{else}}
@@ -8,6 +10,7 @@
 			{{else}}
 				<button class="btn width-80px" id="addGoal" type="button" value={{_id}}>Add</button>
 			{{/if}}
+		{{/if}}
 		{{/if}}
 		<a href="{{pathFor 'goalPage'}}" class="detail-btn colorDarkBlue width-50">{{summary}}</a>
 		<b class="colorDarkBlue width-10">{{adds}}</b>

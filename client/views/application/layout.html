@@ -11,6 +11,9 @@
      	{{#if currentUser}}
      	<a class="colorWhite" href="{{pathFor 'goalSubmit'}}">Add</a>
      	<a class="colorWhite" href="{{pathFor 'goalPersonal'}}">My List</a>
+     	<a class="dropdown">
+			{{>notifications}}
+		</a>
      	{{/if}}
         <ul class="nav pull-right">
      		<li>{{> loginButtons align="right"}}</li>

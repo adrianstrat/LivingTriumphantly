@@ -13,3 +13,7 @@ Meteor.publish('goals', function() {
 Meteor.publish('triumphs', function() {
 	return Triumphs.find();
 });
+
+Meteor.publish('notifications', function() {
+	return Notifications.find({userId : this.userId});
+});

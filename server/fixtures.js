@@ -19,7 +19,9 @@ if (Goals.find().count() === 0) {
 		author: "Tom Coleman",
 		created: 1410927680426,
 		adds: 1,
-		completes: 0
+		completes: 0,
+		upvoters: [],
+		votes: 0
 	});
 	
 	Triumphs.insert({
@@ -45,7 +47,9 @@ if (Goals.find().count() === 0) {
 		author: "Tom Coleman",
 		created: 1410920680456,
 		adds: 10,
-		completes: 5
+		completes: 5,
+		upvoters: [],
+		votes: 0
 	});
 	
 	Goals.insert({
@@ -56,6 +60,23 @@ if (Goals.find().count() === 0) {
 		author: "Sacha Greif",
 		created: 1410920680426,
 		adds: 3,
-		completes: 1
+		completes: 1,
+		upvoters: [],
+		votes: 0
 	});
+	
+	for (var i = 0; i < 10; i++) {
+		Goals.insert({
+			summary: 'Test goal #' + i,
+			image: "http://www-tc.pbs.org/wgbh/nova/assets/img/posters/how-smart-dolphins-vi.jpg",
+			detail: "This is test goal #" + i + "created for testing porpoises",
+			author: sacha.profile.name,
+			userId: sacha._id,
+			created: now - i * 3600 * 1000,
+			adds: 0,
+			completes: 0,
+			upvoters: [],
+			votes: 0
+		});
+	}
 }
